@@ -1,6 +1,13 @@
 <p>Use A-Frame to create your space: <a href="https://aframe.io/">A-Frame</a></p>
 <p>Then add the networked aframe component to enable social VR: <a href="https://github.com/haydenjameslee/networked-aframe">Networked-Aframe</a></p>
-<p>VRLobby has a Networked-AFrame server which you can use so you don't have to set up or host your own. Add the <span class="emph">signalURL</span> parameter to the networked-scene component on your &lt;a-scene&gt; with "https://naf.vrlobby.co" as the value.</p><br>
+<p>VRLobby has a Networked-AFrame server which you can use so you don't have to set up or host your own. Add the <span class="emph">signalURL</span> parameter to the networked-scene component on your &lt;a-scene&gt; with "naf.vrlobby.co" as the value.</p>
+<p>e.g. networked-scene="
+    webrtc: true;
+    webrtcAudio: true;
+    signalURL: naf.vrlobby.co
+    "</p>
+<p>I suggest either providing specific values for the app parameter or leaving it off, i.e. don't just copy the app: myApp from the example.</a></p>
+<br>
 
 <p>I'll be working on adding more support with better social VR functionality. E.G. register and login with VRLobby to always use the same avatar in spaces etc.</p>
 <br>
