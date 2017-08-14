@@ -1,6 +1,18 @@
 <p>Use A-Frame to create your space: <a href="https://aframe.io/">A-Frame</a></p>
 <p>Then add the networked aframe component to enable social VR: <a href="https://github.com/haydenjameslee/networked-aframe">Networked-Aframe</a></p>
-<p>VRLobby has a Networked-AFrame server which you can use so you don't have to set up or host your own. Add the <span class="emph">signalURL</span> parameter to the networked-scene component on your &lt;a-scene&gt; with "https://naf.vrlobby.co" as the value.</p><br>
+<p>VRLobby has a Networked-AFrame server which you can use so you don't have to set up or host your own.</p>
+<ol><li>Add the <span class="emph">signalURL</span> parameter to the networked-scene component on your &lt;a-scene&gt; with "naf.vrlobby.co" as the value.
+    <p>e.g. networked-scene="
+        app: theLobby;
+        webrtc: true;
+        webrtcAudio: true;
+        signalURL: naf.vrlobby.co
+        "</p>
+    <p>I suggest providing specific values for the 'app' parameter. Copying the example ('myApp') or leaving it off will mean you use the same room as any other app
+        that has done the same. This parameter does not seem to like any punctuation other than underscore; if using your URL in some form, <span class="emph">.replace(/\W/g,"_")</span> will remove all the non-word characters.</a></p>
+    <li>Use <span class="emph"> &lt;script src="https://naf.vrlobby.co/easyrtc/easyrtc.js"&gt;&lt;/script&gt;</span> to replace the "easyrtc.js" script reference in the example.</li>
+</ol>
+<br>
 
-<p>I'll be working on adding more support with better social VR functionality. E.G. register and login with VRLobby to always use the same avatar in spaces etc.</p>
+<p>The intention is to create a library that can be added with just a single script tag that will add social VR capabilities to your site without any further coding. E.G. register and login with VRLobby to always use the same avatar in spaces etc.</p>
 <br>

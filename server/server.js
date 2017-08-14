@@ -20,7 +20,7 @@ var app = express();
 app.use("/static", express.static(__dirname+'/static'));
 
 app.set('views', __dirname+'/views');
-app.set('view engine', 'whiskers')
+app.set('view engine', 'whiskers');
 
 app.engine('.html', whiskers.__express);
 
@@ -54,6 +54,21 @@ app.get('/contact', function(req, res){
 				body: 'contact.html'
 			}
 	});
+});
+
+app.get('/credits', function(req, res){
+	res.render('layout.html', {
+			partials: {
+				body: 'credits.html'
+			}
+	});
+});
+
+
+app.get('/lobby', function(req, res){
+    res.render('lobby.html', {
+        appName: (req.get('host') + req.originalUrl).replace(/\W/g,"_")
+    });
 });
 
 // Start Express http server

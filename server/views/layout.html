@@ -21,6 +21,7 @@
         header {
             background-color: #121212;
 			background: url("../static/img/Splash_Logo_Large.png") no-repeat center, url("../static/img/BG_Grid.png") no-repeat center;
+            background-size: auto, cover;
             height: 500px;
             margin: 0;
             transition: height 500ms ease, width 500ms ease, background-position 500ms ease, background-color 500ms ease;
@@ -59,17 +60,6 @@
         header, h2, h3, #menu ul li {
             font-family: 'Varela Round', 'Courier New', Courier, monospace;
         }
-
-        #prolog {
-			color: #fff;
-            padding-top: 350px;
-            text-align: center;
-        }
-
-        #prolog p {
-            font-size: 22px;
-            margin: 20px;
-        }
 		
 		#menu {
 			background: #050505;
@@ -101,7 +91,7 @@
         }
 
         .main {
-			width: 1200px;
+			max-width: 1200px;
 			background-color: #121212;
 			margin-left: auto;
 			margin-right: auto;
@@ -145,7 +135,6 @@
 	<script>
 		$(window).scroll(function () {
 			$('header').addClass("scroll");
-			$('#prolog').addClass("scroll");
 		});
 </script>
 </head>
@@ -162,11 +151,11 @@
             <a href="contact"><li>Contact</li></a>
         </ul>
     </section>
-    <section id="happening" class="main">
+    <section class="main">
         {>body}
     </section>
     <section id="footer">
-		VRLobby is an open source project. Repo is available on <b><a href="https://github.com/jayber/vrlobby">GitHub</a></b>
+		VRLobby is an open source project. Repo is available on <b><a href="https://github.com/jayber/vrlobby">GitHub</a></b><a href="/credits">. Credits</a>
     </section>
 </main>
 <script>
