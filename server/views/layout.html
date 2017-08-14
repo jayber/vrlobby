@@ -1,0 +1,181 @@
+<html>
+<head>
+    <title>VRLobby</title>
+    <meta name="description" content="The multiuser lobby for web VR">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" media="screen" href="static/style/reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+	
+    <script src="static/lib/jquery-3.2.1.min.js"></script>
+    <style>
+        html {
+            background: #0d0515;
+            color: #fff;
+            font-family: 'Varela Round', Consolas, "Lucida Console", Monaco, monospace;
+            font-size: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: #121212;
+			background: url("../static/img/Splash_Logo_Large.png") no-repeat center, url("../static/img/BG_Grid.png") no-repeat center;
+            height: 500px;
+            margin: 0;
+            transition: height 500ms ease, width 500ms ease, background-position 500ms ease, background-color 500ms ease;
+        }
+
+		header h2 {
+			display: none;
+        }
+		
+        header.scroll {
+            height: 100px;
+            background: url("../static/img/logo.png") no-repeat left;
+			background-position: 400px;
+			background-color: #121212;
+			padding-right: 400px;
+			color: #fff;
+        }
+
+		header.scroll h2 {
+			display: block;
+            font-weight: bold;
+            text-align: right;
+			padding-top: 40px;
+        }
+
+        h3, .emph, .main a {
+            color: #555;
+			font-weight: bold;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        header, h2, h3, #menu ul li {
+            font-family: 'Varela Round', 'Courier New', Courier, monospace;
+        }
+
+        #prolog {
+			color: #fff;
+            padding-top: 350px;
+            text-align: center;
+        }
+
+        #prolog p {
+            font-size: 22px;
+            margin: 20px;
+        }
+		
+		#menu {
+			background: #050505;
+			text-align: center;
+		}
+		
+        #menu ul {
+            padding: 10px 20px;
+            list-style-type: none;
+        }
+
+        #menu ul li {
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            padding-left: 15px;
+			padding-right: 15px;
+            text-align: center;
+        }
+		
+		#menu a {
+			font-weight: bold;
+			color: #ddd;
+		}
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .main {
+			width: 1200px;
+			background-color: #121212;
+			margin-left: auto;
+			margin-right: auto;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-weight: normal;
+			-webkit-border-bottom-right-radius: 20px;
+			-webkit-border-bottom-left-radius: 20px;
+			-moz-border-radius-bottomright: 20px;
+			-moz-border-radius-bottomleft: 20px;
+			border-bottom-right-radius: 20px;
+			border-bottom-left-radius: 20px;
+        }
+
+        .main ol {
+            list-style: decimal outside;
+            margin-left: 30px;
+        }
+
+        .main p {
+            margin: 10px 0;
+        }
+		
+        .main a {
+            text-decoration: underline;
+        }
+
+        table, td, th {
+            border: 1px solid white;
+            padding: 10px;
+        }
+		
+		#footer {
+			font-size: 13px;
+			text-align: center;
+			padding: 10px;
+			color: #321351;
+		}
+    </style>
+	<script>
+		$(window).scroll(function () {
+			$('header').addClass("scroll");
+			$('#prolog').addClass("scroll");
+		});
+</script>
+</head>
+<body>
+<header>
+    <h2>A multi-user lobby for VR websites</h2>
+</header>
+<main>
+    <section id="menu">
+        <ul>
+            <a href="/"><li>Home</li></a>
+            <a href="viewing"><li>Viewing VR Websites</li></a>
+            <a href="create"><li>Creating Social VR</li></a>
+            <a href="contact"><li>Contact</li></a>
+        </ul>
+    </section>
+    <section id="happening" class="main">
+        {>body}
+    </section>
+    <section id="footer">
+		VRLobby is an open source project. Repo is available on <b><a href="https://github.com/jayber/vrlobby">GitHub</a></b>
+    </section>
+</main>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-104431518-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
