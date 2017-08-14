@@ -63,6 +63,14 @@ res.render('layout.html', {
 });
 });
 
+app.get('/lobby', function(req, res){
+res.render('lobby.html', {
+    // uncomment to enable caching for this template
+    //cache: true,
+    appName: (req.get('host') + req.originalUrl).replace(/\W/g,"_")
+});
+});
+
 app.use("/static",serveStatic('server/static', {'index': ['index.html']}));
 
 // Start Express http server
