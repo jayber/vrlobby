@@ -24,44 +24,34 @@ app.set('view engine', 'whiskers');
 
 app.engine('.html', whiskers.__express);
 
+function renderWithTemplate(template, res) {
+    var options = {
+        year: new Date().getFullYear(),
+        partials: {
+            body: template
+        }
+    };
+    res.render('layout.html', options);
+}
+
 app.get('/', function(req, res){
-	res.render('layout.html', {
-			partials: {
-				body: 'index.html'
-			}
-	});
+    renderWithTemplate('index.html', res);
 });
 
 app.get('/viewing', function(req, res){
-	res.render('layout.html', {
-			partials: {
-				body: 'viewing.html'
-			}
-	});
+	renderWithTemplate('viewing.html', res);
 });
 
 app.get('/create', function(req, res){
-	res.render('layout.html', {
-			partials: {
-				body: 'create.html'
-			}
-	});
+    renderWithTemplate('create.html', res);
 });
 
 app.get('/contact', function(req, res){
-	res.render('layout.html', {
-			partials: {
-				body: 'contact.html'
-			}
-	});
+    renderWithTemplate('contact.html', res);
 });
 
 app.get('/credits', function(req, res){
-	res.render('layout.html', {
-			partials: {
-				body: 'credits.html'
-			}
-	});
+    renderWithTemplate('credits.html', res);
 });
 
 

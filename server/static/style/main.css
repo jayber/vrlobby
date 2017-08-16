@@ -145,6 +145,10 @@ th {
 	background-color: #555;
 }
 
+#footer a {
+    font-weight: bold;
+}
+
 #footer {
 	font-size: 13px;
 	text-align: center;
