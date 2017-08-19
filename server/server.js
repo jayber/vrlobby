@@ -1,38 +1,20 @@
-// Load required modules
-var http    = require("http");              // http server core module
-var express = require("express");           // web framework external module
-var serveStatic = require('serve-static');  // serve static files
-var socketIo = require("socket.io");        // web socket external module
-var easyrtc = require("easyrtc");               // EasyRTC external module
 
-
+var http    = require("http");
+var express = require("express");
+var socketIo = require("socket.io");
+var easyrtc = require("easyrtc");
 var whiskers = require('whiskers');
 
-// Set process name
 process.title = "node-easyrtc";
 
-// Get port or default to 8080
 var port = process.env.PORT || 8080;
 
-// Setup and configure Express http server. Expect a subfolder called "static" to be the web root.
 var app = express();
-
 app.use("/static", express.static(__dirname+'/static'));
 
 app.set('views', __dirname+'/views');
 app.set('view engine', 'whiskers');
-
 app.engine('.html', whiskers.__express);
-
-function renderWithTemplate(template, res) {
-    var options = {
-        year: new Date().getFullYear(),
-        partials: {
-            body: template
-        }
-    };
-    res.render('layout.html', options);
-}
 
 app.get('/', function(req, res){
     renderWithTemplate('index.html', res);
@@ -120,7 +102,13 @@ var rtc = easyrtc.listen(app, socketServer, null, function(err, rtcRef) {
     });
 });
 
-//listen on port
-webServer.listen(port, function () {
-    console.log('listening on http://localhost:' + port);
-});
+
+function renderWithTemplate(template, res) {
+    var options = {
+        year: new Date().getFullYear(),
+        partials: {
+            body: template
+        }
+    };
+    res.render('layout.html', options);
+}
