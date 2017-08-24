@@ -3,50 +3,28 @@
     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="https://naf.vrlobby.co/easyrtc/easyrtc.js"></script>
-    <script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
+    <script src="/node_modules/networked-aframe/dist/networked-aframe.js"></script>
     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
     <script src="/static/script/components.js"></script>
-    <script>
-        AFRAME.registerComponent('spawn-in-circle', {
-            schema: {
-                radius: {type: 'number', default: 1}
-            },
+    <script src="/static/script/util.js"></script>
+    <script src="/static/lib/jquery-3.2.1.min.js"></script>
+    <script src="/static/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
 
-            init: function () {
-                var el = this.el;
-                var center = el.getAttribute('position');
+    <link rel="stylesheet" media="screen" href="/static/lib/jquery-ui-1.12.1/jquery-ui.css">
 
-                var angleRad = this.getRandomAngleInRadians();
-                var circlePoint = this.randomPointOnCircle(this.data.radius, angleRad);
-                var worldPoint = {x: circlePoint.x + center.x, y: center.y, z: circlePoint.y + center.z};
-                el.setAttribute('position', worldPoint);
-
-                var angleDeg = angleRad * 180 / Math.PI;
-                var angleToCenter = -1 * angleDeg + 90;
-                var rotationStr = '0 ' + angleToCenter + ' 0';
-                el.setAttribute('rotation', rotationStr);
-            },
-
-            getRandomAngleInRadians: function () {
-                return Math.random() * Math.PI * 2;
-            },
-
-            randomPointOnCircle: function (radius, angleRad) {
-                x = Math.cos(angleRad) * radius;
-                y = Math.sin(angleRad) * radius;
-                return {x: x, y: y};
-            }
-        });
-    </script>
 </head>
 <body>
 
-<a-scene init-environment networked-scene="
+
+<div id="dialog" title="Enter name" style="display: none">Hi please enter a name to identify yourself<br>
+<input type="text" id="username" name="name">
+</div>
+
+<a-scene log-on networked-scene="
   app: {appName};
   webrtc: true;
   webrtcAudio: true;
-  signalURL: naf.vrlobby.co
-">
+  signalURL: naf.vrlobby.co;" init-environment>
     <a-assets>
         <script id="avatar-template" type="text/html">
             <a-entity class="avatar">
@@ -104,12 +82,12 @@
     <a-entity collada-model="#table" position="2 0.13 2"></a-entity>
     <a-entity collada-model="#table" position="2 0.13 4"></a-entity>
 
-    <a-box depth="0.1" height="2" width="1" color="#999999" position="2 1 0" rotation="0 -45 0">
-        <a-entity text="value: Environment;color:#333333;anchor:center;baseline:center;width:1.5" scale="2 2 2" position="1.1 0.75 0.05"></a-entity>
+    <a-box depth="0.1" height="2" width="1" color="#282828" metalness="0.5" position="2 1 0" rotation="0 -45 0">
+        <a-entity text="value: Environment;color:#dddddd;anchor:center;baseline:center;width:1.5" scale="2 2 2" position="1.1 0.75 0.05"></a-entity>
 
-        <a-triangle switch-environment="down" color="#333" position="-0.39 0.2 0.06" side="double" scale="0.15 0.15 0.15" rotation="0 0 90"></a-triangle>
-        <a-triangle switch-environment="up" color="#333" position="0.39 0.2 0.06" side="double" scale="0.15 0.15 0.15" rotation="0 0 -90"></a-triangle>
-        <a-entity id="name" text="value:name;color:#55f;anchor:center;baseline:center;width:2;align:center" position="0 0.2 0.06"></a-entity>
+        <a-triangle switch-environment="down" color="#ccc" position="-0.39 0.2 0.06" side="double" scale="0.15 0.15 0.15" rotation="0 0 90"></a-triangle>
+        <a-triangle switch-environment="up" color="#ccc" position="0.39 0.2 0.06" side="double" scale="0.15 0.15 0.15" rotation="0 0 -90"></a-triangle>
+        <a-entity id="name" text="value:name;color:#ccf;anchor:center;baseline:center;width:2;align:center" position="0 0.2 0.06"></a-entity>
     </a-box>
 
 

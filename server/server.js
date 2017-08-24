@@ -4,13 +4,19 @@ var express = require("express");
 var socketIo = require("socket.io");
 var easyrtc = require("easyrtc");
 var whiskers = require('whiskers');
-
-process.title = "node-easyrtc";
+var winston = require('winston');
 
 var port = process.env.PORT || 8080;
 
 var app = express();
+
+winston.add(winston.transports.File, { filename: 'client.log', json: false });
+app.get('/log', function(req, res){
+    winston.log('info', req.query.user+"; "+req.query.message);
+    res.end();
+});
 app.use("/static", express.static(__dirname+'/static'));
+app.use("/node_modules", express.static(__dirname+'/../node_modules'));
 
 app.set('views', __dirname+'/views');
 app.set('view engine', 'whiskers');
