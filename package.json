@@ -7,9 +7,7 @@
   },
   "author": "James Bromley",
   "dependencies": {
-    "easyrtc": "^1.1.0",
     "express": "^4.15.4",
-    "networked-aframe": "^0.2.0",
     "whiskers": "^0.4.0",
     "winston": "^2.3.1"
   }
