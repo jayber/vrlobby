@@ -81,6 +81,6 @@ AFRAME.registerSystem('switch-environment', {
 
   setEnvironment: function (name) {
     this.environment.setAttribute('environment', 'preset', name);
-    //this.name.setAttribute('text', 'value', name);
+    this.name.setAttribute('text', 'value', name);
   }
 });
