@@ -2,7 +2,7 @@ AFRAME.registerComponent('log-on', {
 
   init: function () {
     $("#dialog").dialog({
-      autoOpen: false, modal: true, height: 200, width: 300, resizable: false, beforeClose: function (event, ui) {
+      autoOpen: false, modal: true, height: 210, width: 300, resizable: false, beforeClose: function (event, ui) {
         if ($("#username").val().length == 0) {
           return false;
         }
