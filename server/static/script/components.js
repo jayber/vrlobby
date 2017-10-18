@@ -46,7 +46,7 @@ AFRAME.registerSystem('switch-environment', {
       self.name = document.querySelector("#name");
       self.names = ['default', 'contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris'];
       self.curIndex = self.names.indexOf(self.environment.getAttribute("environment").preset);
-      //self.name.setAttribute('text', 'value', self.names[self.curIndex]);
+      self.name.setAttribute('text', 'value', self.names[self.curIndex]);
 
       var wevrSystem = self.el.systems.wevr;
       self.stateHandler = wevrSystem.stateHandler;
