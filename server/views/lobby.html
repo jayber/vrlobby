@@ -1,13 +1,13 @@
 <html>
 <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="/static/lib/adapter-latest.js"></script>
     <script src="https://jayber.github.io/wevr/dist/wevr.js"></script>
     <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
     <script src="/static/script/components.js"></script>
     <script src="/static/script/util.js"></script>
     <script src="/static/lib/jquery-3.2.1.min.js"></script>
     <script src="/static/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
-    <script src="/static/lib/adapter-latest.js"></script>
 
     <link rel="stylesheet" media="screen" href="/static/lib/jquery-ui-1.12.1/jquery-ui.css">
 
@@ -15,7 +15,10 @@
 <body>
 
 <div id="dialog" title="Enter name" style="display: none">Hi. Please enter a name to identify yourself:<br>
-<input type="text" id="username" name="name" style="margin-top: 10px">
+    <p><input type="text" id="username" name="name"></p>
+    <p>Also <i>use headphones</i> at all times! Else feedback!</p>
+    <p>On oculus, press and hold the left joystick to refresh.</p>
+    <p>If your connection fails, the page will refresh automatically in which case remember to re-enable your microphone.</p>
 </div>
 
 <a-scene log-on>
