@@ -40,11 +40,8 @@ app.get('/credits', function(req, res){
     renderWithTemplate('credits.html', res);
 });
 
-
 app.get('/lobby', function(req, res){
-    res.render('lobby.html', {
-        appName: (req.get('host') + req.originalUrl).replace(/\W/g,"_")
-    });
+    res.render('lobby.html');
 });
 
 // Start Express http server

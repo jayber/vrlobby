@@ -2,7 +2,7 @@ AFRAME.registerComponent('log-on', {
 
   init: function () {
     $("#dialog").dialog({
-      autoOpen: false, modal: true, height: 350, width: 420, resizable: false, beforeClose: function (event, ui) {
+      autoOpen: false, modal: true, height: 395, width: 420, resizable: false, beforeClose: function (event, ui) {
         if ($("#username").val().length == 0) {
           return false;
         }
@@ -15,6 +15,13 @@ AFRAME.registerComponent('log-on', {
         }
       ], close: function () {
         document.cookie = "name=" + $("#username").val() + ";path=/"
+      },
+      open: function() {
+        $("#dialog").keypress(function(e) {
+          if (e.keyCode == $.ui.keyCode.ENTER) {
+            $(this).dialog("close");
+          }
+        });
       }
     });
     $(document).ready(function () {

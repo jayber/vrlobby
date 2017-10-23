@@ -10,15 +10,17 @@
     <script src="/static/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
 
     <link rel="stylesheet" media="screen" href="/static/lib/jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" media="screen" href="/static/style/reset.css">
+    <link rel="stylesheet" media="screen" href="/static/style/main.css">
 
 </head>
 <body>
 
 <div id="dialog" title="Enter name" style="display: none">Hi. Please enter a name to identify yourself:<br>
-    <p><input type="text" id="username" name="name"></p>
+    <p><input type="text" id="username" name="name" autofocus></p>
     <p>Also <i>use headphones</i> at all times! Else feedback!</p>
-    <p>On oculus, press and hold the left joystick to refresh.</p>
-    <p>If your connection fails, the page may refresh automatically, in which case remember to re-enable your microphone.</p>
+    <p>On Oculus Touch, press and hold the left joystick to refresh.</p>
+    <p>If your connection fails, the page may refresh automatically, in which case remember to re-enable your microphone if necessary.</p>
 </div>
 
 <a-scene log-on>
