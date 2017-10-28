@@ -1,6 +1,6 @@
 html {
 	background: #0d0515;
-	color: #fff;
+	color: #eee;
 	font-family: 'Varela Round', Consolas, "Lucida Console", Monaco, monospace;
 	font-size: 20px;
 	padding: 0;
@@ -108,7 +108,7 @@ h3 {
 	background-color: #121212;
 	margin-left: auto;
 	margin-right: auto;
-	color: #ffffff;
+	color: #eeeeee;
 	padding: 10px 20px;
 	font-size: 17px;
 	font-weight: normal;
@@ -127,7 +127,7 @@ h3 {
 }
 
 .main p {
-	margin: 10px 0;
+	margin: 12px 0;
 }
 
 .main a {
@@ -171,3 +171,51 @@ th {
 #dialog i {
     font-weight: bold;
 }
+
+#lobbyroom {
+    background-image: url("../img/lobbythumb.png");
+}
+
+.site-list {
+overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+.listing {
+    width: 200px;
+    height: 310px;
+    float: left;
+    margin-right: 5px;
+    background-color: #050505;
+}
+
+.listing .image {
+    background-size: cover;
+    width: 200px;
+    height: 220px;
+}
+
+.listing p, .listing h1 {
+    text-align: center;
+}
+
+.listing p {
+    font-size: 14px;
+}
+
+.listing h1 {
+    margin: 12px 0;
+}
+
+.listing a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.list-advice {
+    margin: 125px 0 0 20px;
+    float: left;
+    font-size: 22px;
+}
+

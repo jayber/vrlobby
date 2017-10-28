@@ -21,7 +21,11 @@ app.set('view engine', 'whiskers');
 app.engine('.html', whiskers.__express);
 
 app.get('/', function(req, res){
-    renderWithTemplate('index.html', res);
+    renderWithTemplate('home.html', res);
+});
+
+app.get('/what', function(req, res){
+    renderWithTemplate('what.html', res);
 });
 
 app.get('/viewing', function(req, res){
