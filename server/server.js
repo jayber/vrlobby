@@ -49,6 +49,14 @@ app.get('/lobby', function(req, res){
     res.render('lobby.html');
 });
 
+app.get('/niceland', function(req, res){
+    res.render('niceland.html');
+});
+
+app.get('/disco', function(req, res){
+    res.render('disco.html');
+});
+
 // Start Express http server
 var webServer = http.createServer(app).listen(port);
 
