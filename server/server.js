@@ -14,6 +14,7 @@ app.get('/log', function(req, res){
     res.end();
 });
 app.use("/static", express.static(__dirname+'/static'));
+app.use("/favicon.ico", express.static(__dirname+'/static/img/favicon.ico'));
 app.use("/node_modules", express.static(__dirname+'/../node_modules'));
 
 app.set('views', __dirname+'/views');

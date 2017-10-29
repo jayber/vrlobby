@@ -130,6 +130,15 @@ h3 {
 	margin: 12px 0;
 }
 
+.main br {
+
+}
+
+.main p.detail {
+    font-family: "Helvetica Neue Light", arial, sans-serif;
+    font-size: small;
+}
+
 .main a {
 	text-decoration: underline;
 }
@@ -184,16 +193,22 @@ overflow: hidden;
 
 .listing {
     width: 200px;
-    height: 310px;
+    height: 360px;
     float: left;
     margin-right: 5px;
     background-color: #050505;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    position: relative;
 }
 
 .listing .image {
     background-size: cover;
     width: 200px;
-    height: 220px;
+    height: 251px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    position: relative;
 }
 
 .listing p, .listing h1 {
@@ -214,8 +229,22 @@ overflow: hidden;
 }
 
 .list-advice {
-    margin: 125px 0 0 20px;
+    margin-top: 20px;
     float: left;
     font-size: 22px;
+    width: 100%;
+    text-align: center;
+}
+
+.listing .count {
+    opacity: 0.5;
+    float: right;
+    background-color: #000;
+    font-size: 20px;
+    padding: 2px 7px;
+    position: absolute;
+    top: 215px;
+    right: 0;
+    font-family: 'Source Code Pro', Consolas, monospace;
 }
 
