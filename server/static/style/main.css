@@ -138,9 +138,14 @@ h3 {
 
 }
 
-.main p.detail {
-    font-family: "Helvetica Neue Light", arial, sans-serif;
+.main .detail {
     font-size: small;
+    line-height: 1.7;
+}
+
+ul.detail {
+    list-style-position: outside;
+    margin-left: 12px;
 }
 
 .main a {
